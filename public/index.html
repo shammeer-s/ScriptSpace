@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Script Space</title>
+
+    <script defer src="/__/firebase/10.13.0/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-performance-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+    
+    <div class="container-fluid w-100" id="Parent">
+        <div class=" vh-100">
+            <nav id="sidebar" class="col-lg-2 d-md-block sidebar py-4">
+        <ul class="nav flex-column">
+            <li class="nav-item mb-3"> 
+                <button type="button" onclick="googleLogin()" class="btn btn-secondary w-100">Sign In</button>
+            </li>
+            <li class="nav-item mb-3"> 
+                <button type="button" onclick="addScript()" class="btn btn-outline-light w-100">Add</button>
+            </li>
+            <li class="nav-item">
+                <div class="d-flex align-items-center">
+                    <div class="flex-grow-1">
+                        <a class="nav-link active mr-3" href="#">New</a>
+                    </div>  
+                    <div>
+                        <a class="icon text-danger" onclick="deleteScript()">
+                            <i class="bi bi-trash3 h6"></i>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+            <div class="col-md-9 ml-sm-auto col-lg-10 px-4  h-100">
+                <div role="main" class="row h-100">
+                    <div id="tabs" class="col-md-12 d-flex flex-column">
+                        <ul class="nav nav-pills my-4 w-100" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active btn-light" href="#html-tab" data-toggle="tab">HTML</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#css-tab" data-toggle="tab">CSS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#js-tab" data-toggle="tab">JS</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content flex-grow-1">
+                            <div class="tab-pane fade show active h-100" id="html-tab">
+                                <textarea id="html-code" class="form-control h-100"></textarea>
+                            </div>
+                            <div class="tab-pane fade h-100" id="css-tab">
+                                <textarea id="css-code" class="form-control h-100"></textarea>
+                            </div>
+                            <div class="tab-pane fade h-100" id="js-tab">
+                                <textarea id="js-code" class="form-control h-100"></textarea>
+                            </div>
+                        </div>
+                    
+                        <div class="my-3">
+                            <button id="run-btn" type="button" class="btn btn-primary">Render</button>
+                            <button id="save-btn" type="button" onclick="testfunc()" class="btn btn-secondary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="output" class="mt-5"></div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
